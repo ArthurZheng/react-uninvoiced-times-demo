@@ -1,25 +1,25 @@
 import React from 'react';
-import marked from 'marked';
 import ConsultantWeek from './consultant_week';
 
 export default React.createClass({
-  rawMarkup: function(){
-    var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
-    return { __html: rawMarkup };
+
+  showConsultantTimes: function(){
+      console.log('showConsultantTimes called');
   },
 
   render: function(){
     var projectID = this.props.projectID;
 
-    var consultantWeeks = this.props.consultantWeeks.map(function(cw){
+    var consultantWeeks = this.props.consultantWeeks.map(function(cw, i){
       return (
-        <ConsultantWeek {...cw} projectID ={projectID}/>
+        <ConsultantWeek {...cw} key={i} projectID ={projectID}/>
       );
     });
 
     return(
       <div class="container">
         {this.props.name}
+        <button onClick={this.showConsultantTimes} type='button' className='btn btn-info pull-right'>Show Consultant Times</button><br /><br />
         <table className="project table table-striped table-bordered">
           <thead>
             <tr className="success">
@@ -39,7 +39,7 @@ export default React.createClass({
 
           <tbody>
 
-            {consultantWeeks}
+            {consultantWeeks }
 
           </tbody>
       </table>

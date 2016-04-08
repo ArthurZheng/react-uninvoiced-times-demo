@@ -49,14 +49,14 @@ export default React.createClass({
 
   componentDidMount: function(){
     this.loadProjectsFromServer();
-    setInterval(this.loadProjectsFromServer, this.props.pollInterval);
+    // setInterval(this.loadProjectsFromServer, this.props.pollInterval);
   },
 
   render: function(){
     return(
       <div className="commentBox">
         <h1>Projects</h1>
-        <ProjectList projects={this.state.projects} />
+        <ProjectList projects={this.state.projects}/>
         <ProjectForm onProjectSubmit={this.handleProjectSubmit} />
       </div>
     );

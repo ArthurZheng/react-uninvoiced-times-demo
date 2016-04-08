@@ -6,7 +6,7 @@ export default React.createClass({
 
     var projectNodes = this.props.projects.map(function(project){
       return (
-        <Project {...project} />
+        <Project {...project} key={project.projectID} />
       );
     });
     return (

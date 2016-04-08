@@ -5,7 +5,7 @@ export default React.createClass({
     var times = this.props.times.map(function(t){
       let roundedDayFromHours = (Math.round( (t.hours / 8) * 10 ) / 10);
       return (
-        <tr>
+        <tr key={t.date}>
           <td>{t.date}</td>
           <td>  -- {t.hours.toFixed(1)}</td>
           <td>  -- {roundedDayFromHours.toFixed(1)}</td>
@@ -13,6 +13,7 @@ export default React.createClass({
       )
     });
     return(
+      <div>
       <tr className="consultanttWeek info">
           <td>{this.props.weekStart} </td>
           <td>{this.props.consultant.name} </td>
@@ -25,18 +26,18 @@ export default React.createClass({
           <td>{this.props.poNumber ? this.props.poNumber : 'N/A'} </td>
           <td>{this.props.amountRemaining ? this.props.amountRemaining : 'N/A'} </td>
           <td>{this.props.status} </td>
-          <tr>
-            <td colSpan="11">
-              <table>
-                <tbody>
-                  {this.props.projectID === 540 ? times : ''}
-                </tbody>
-
-              </table>
-            </td>
-          </tr>
       </tr>
+      <tr>
+          <td>
+            <table>
+              <tbody>
+                {this.props.projectID === 540 ? times : ''}
+              </tbody>
 
+            </table>
+          </td>
+      </tr>
+</div>
     );
   },
 });
