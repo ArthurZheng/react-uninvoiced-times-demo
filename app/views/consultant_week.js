@@ -3,11 +3,12 @@ import React from 'react';
 export default React.createClass({
   render: function(){
     var times = this.props.times.map(function(t){
+      let roundedDayFromHours = (Math.round( (t.hours / 8) * 10 ) / 10);
       return (
         <tr>
           <td>{t.date}</td>
-          <td>  -- {(t.hours).toFixed(1)}</td>
-          <td>  -- {(Math.round( (t.hours / 8) * 10 ) / 10).toFixed(1)}</td>
+          <td>  -- {t.hours.toFixed(1)}</td>
+          <td>  -- {roundedDayFromHours.toFixed(1)}</td>
         </tr>
       )
     });
@@ -16,7 +17,7 @@ export default React.createClass({
       <tr className="consultanttWeek info">
           <td>{this.props.weekStart} </td>
           <td>{this.props.consultant.name} </td>
-          <td>{this.props.hours} </td>
+          <td>{this.props.times.hours} </td>
           <td>{this.props.totalHours} </td>
           <td>{this.props.billableUnits} </td>
           <td>{this.props.unitType} </td>
