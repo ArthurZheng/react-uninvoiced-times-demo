@@ -3,16 +3,20 @@ import ConsultantWeek from './consultant_week';
 
 export default React.createClass({
 
-  showConsultantTimes: function(){
-      console.log('showConsultantTimes called');
+  getInitialState: function(){
+      return {opened: false};
+  },
+
+  showConsultantTimes: function(e){
+    this.setState({opened: true});
+    console.log('showConsultantTimes called');
   },
 
   render: function(){
-    var projectID = this.props.projectID;
-
+    var opened = this.state.opened;
     var consultantWeeks = this.props.consultantWeeks.map(function(cw, i){
       return (
-        <ConsultantWeek {...cw} key={i} projectID ={projectID}/>
+        <ConsultantWeek {...cw} key={i} opened={opened} />
       );
     });
 
@@ -39,7 +43,7 @@ export default React.createClass({
 
           <tbody>
 
-            {consultantWeeks }
+            {consultantWeeks  }
 
           </tbody>
       </table>

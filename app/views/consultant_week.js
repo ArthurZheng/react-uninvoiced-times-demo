@@ -31,7 +31,7 @@ export default React.createClass({
           <td>
             <table>
               <tbody>
-                {this.props.projectID === 540 ? times : ''}
+                {this.props.opened ? times : ''}
               </tbody>
 
             </table>
