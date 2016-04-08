@@ -8,7 +8,7 @@ export default React.createClass({
   },
 
   showConsultantTimes: function(e){
-    this.setState({opened: true});
+    this.setState({opened: !this.state.opened});
     console.log('showConsultantTimes called');
   },
 
