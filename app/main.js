@@ -6,6 +6,6 @@ import React from 'react';
 import CommentBox from './views/project_box';
 
 ReactDOM.render(
-  <CommentBox url="./uninvoiced_times.json" pollInterval={2000} />,
+  <CommentBox url="http://localhost:3001/uninvoiced_times.json" pollInterval={2000} />,
   document.getElementById('content')
 );

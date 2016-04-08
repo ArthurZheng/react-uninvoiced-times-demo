@@ -24,6 +24,14 @@ export default React.createClass({
               <th>Week Start</th>
               <th>Consultant</th>
               <th>Hours</th>
+              <th>Total Hours</th>
+              <th>Billable Units</th>
+              <th>Unit Type</th>
+              <th>Rate</th>
+              <th>Amount</th>
+              <th>PO #</th>
+              <th>Amount Remaining</th>
+              <th>Status</th>
             </tr>
           </thead>
 
