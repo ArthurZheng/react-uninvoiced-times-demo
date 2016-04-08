@@ -9,9 +9,11 @@ export default React.createClass({
   },
 
   render: function(){
+    var projectID = this.props.projectID;
+
     var consultantWeeks = this.props.consultantWeeks.map(function(cw){
       return (
-        <ConsultantWeek {...cw} />
+        <ConsultantWeek {...cw} projectID ={projectID}/>
       );
     });
 
@@ -36,6 +38,7 @@ export default React.createClass({
           </thead>
 
           <tbody>
+
             {consultantWeeks}
 
           </tbody>

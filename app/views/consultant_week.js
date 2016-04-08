@@ -12,7 +12,6 @@ export default React.createClass({
         </tr>
       )
     });
-    console.log('totalhours ', this.props)
     return(
       <tr className="consultanttWeek info">
           <td>{this.props.weekStart} </td>
@@ -30,7 +29,7 @@ export default React.createClass({
             <td colSpan="11">
               <table>
                 <tbody>
-                  {times}
+                  {this.props.projectID === 540 ? times : ''}
                 </tbody>
 
               </table>
